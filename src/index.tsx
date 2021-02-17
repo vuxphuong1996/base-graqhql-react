@@ -1,37 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
+import { Router } from '@reach/router';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
 import {
-    ApolloClient,
     ApolloProvider,
-    NormalizedCacheObject,
     gql,
     useQuery,
 } from '@apollo/client';
-import { Dashboard, Login } from 'pages';
-import { cache } from './cache';
+import reportWebVitals from './reportWebVitals';
+import { Dashboard, Login, Register } from 'pages';
 import theme from 'theme';
-
-export const typeDefs = gql`
-    extend type Query {
-        isLoggedIn: Boolean!
-    }
-`;
-
-const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-    cache,
-    uri: '',
-    headers: {
-        authorization: localStorage.getItem('token') || '',
-        'client-name': 'Space Explorer [web]',
-        'client-version': '1.0.0',
-    },
-    typeDefs,
-    resolvers: {},
-});
+import { client } from 'utils/createClient';
 
 const IS_LOGGED_IN = gql`
     query IsUserLoggedIn {
@@ -39,9 +19,20 @@ const IS_LOGGED_IN = gql`
     }
 `;
 
+function Account() {
+    return (
+        <Fragment>
+            <Router primary={false} component={Fragment}>
+                <Login path="/*" />
+                <Register path="register" />
+            </Router>
+        </Fragment>
+    )
+}
+
 function IsLoggedIn() {
     const { data } = useQuery(IS_LOGGED_IN);
-    return data.isLoggedIn ? <Dashboard /> : <Login />;
+    return data.isLoggedIn ? <Dashboard /> : <Account />;
 }
 
 ReactDOM.render(

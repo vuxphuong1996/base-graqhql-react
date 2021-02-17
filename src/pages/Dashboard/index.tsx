@@ -1,20 +1,13 @@
-import React, { Fragment } from 'react';
-import { Router } from '@reach/router';
-
-import { Footer } from 'components';
+import { Grid } from '@material-ui/core';
+import { SideBar, Content } from 'components';
 
 const Dashboard: React.FC = () => {
-    return ( 
-        <Fragment>
-            <Router primary={false} component={Fragment}>
-                {/* <Launches path="/" />
-                <Launch path="launch/:launchId" />
-                <Cart path="cart" />
-                <Profile path="profile" /> */}
-            </Router>
-        <Footer />
-        </Fragment>
+    return (
+        <Grid container>
+            <SideBar />
+            <Content />
+        </Grid>
     );
-}
- 
+};
+
 export default Dashboard;

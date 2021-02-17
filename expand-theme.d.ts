@@ -17,12 +17,12 @@ declare module '@material-ui/core/styles/createTypography' {
         type3?: string;
     }
     interface TypographyOptions {    
-        fsCustom?: fontSizeTypographyOptions;
+        fsCustom?: fontSizeTypography;
         fwCustom?: fontWeightTypography;
         lhCustom?: lineHeightTypography;
     }
     interface Typography {    
-        fsCustom: fontSizeTypographyOptions;
+        fsCustom: fontSizeTypography;
         fwCustom: fontWeightTypography;
         lhCustom: lineHeightTypography;
     }

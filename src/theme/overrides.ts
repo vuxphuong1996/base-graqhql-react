@@ -8,7 +8,16 @@ const overrides = {
                 paddingRight: '35px',
             },
         },
-    }
+    },
+    MuiTypography: {
+        body1: {
+            fontFamily: "'Open Sans', sans-serif",
+        },
+        h3: {
+            fontFamily: "'Open Sans', sans-serif",
+            fontWeight: 700,
+        },
+    },
 };
 
 export default overrides;

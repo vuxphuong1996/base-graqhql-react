@@ -17,6 +17,6 @@ const theme = createMuiTheme({
     palette,
     typography,
     overrides,
-  });
-  
-  export default theme;
+});
+
+export default theme;

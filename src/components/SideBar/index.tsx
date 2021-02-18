@@ -1,13 +1,17 @@
-import { Grid, Typography } from "@material-ui/core"
-
+import { Grid } from "@material-ui/core"
+import { useStyles } from './style';
+import { Logo, UserInfor, ChatList } from './components';
 export interface SideBarProps {
     
 }
 
 const SideBar: React.FC<SideBarProps> = () => {
+    const classes = useStyles();
     return (
-        <Grid>
-            <Typography>test</Typography>
+        <Grid className={classes.root}>
+            <Logo />
+            <UserInfor />
+            <ChatList />
         </Grid>
     );
 }

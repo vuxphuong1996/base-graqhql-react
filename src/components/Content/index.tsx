@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Chat, Information } from 'components';
+import { Chat, Information } from './components';
 
 export interface ContentProps {
     

@@ -18,7 +18,7 @@ You will also see any lint errors in the console.
 
 Runs app and electron in the development mode.\
 
-### Structure
+## Structure
 
 - asset: Store image, fonts, icon, etc...
 - components: Share common component in app

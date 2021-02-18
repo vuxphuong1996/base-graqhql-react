@@ -1,8 +1,8 @@
 const typography = {
     fsCustom: {
         type1: 18,
-        type2: 20,
-        type3: 24,
+        type2: 24,
+        type3: 30,
     },
     fwCustom: {
         type1: 300,

@@ -29,12 +29,27 @@ declare module '@material-ui/core/styles/createTypography' {
 }
 
 declare module '@material-ui/core/styles/createPalette' {
+    interface greyCustomPalette {
+        dark?: string;
+        light?: string;
+        lightWeight?: string;
+    }
     interface PaletteOptions {    
         white?: string;
         black?: string;
+        status?: string;
+        warningCustom?: string;
+        chatBackground?: string;
+        primaryColor?: string;
+        greyCustom?: greyCustomPalette;
     }
     interface Palette {    
         white: string;
         black: string;
+        status: string;
+        warningCustom: string;
+        chatBackground: string;
+        primaryColor: string;
+        greyCustom: greyCustomPalette;
     }
 }
